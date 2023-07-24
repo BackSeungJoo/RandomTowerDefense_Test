@@ -986,6 +986,18 @@ PrefabInstance:
       propertyPath: Range
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3643590323073508786, guid: e23875625c6a63d42a6d1eca90d50eba, type: 3}
+      propertyPath: Splash
+      value: 
+      objectReference: {fileID: 1905743824562439165, guid: 068c64ce15e4a4f46a117f8eae0eaf53, type: 3}
+    - target: {fileID: 3643590323073508786, guid: e23875625c6a63d42a6d1eca90d50eba, type: 3}
+      propertyPath: CannonShot
+      value: 
+      objectReference: {fileID: 8300000, guid: 90decdb238babc345aaccbde15acd03f, type: 3}
+    - target: {fileID: 3643590323073508786, guid: e23875625c6a63d42a6d1eca90d50eba, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e23875625c6a63d42a6d1eca90d50eba, type: 3}
 --- !u!1 &815059645 stripped
@@ -1772,7 +1784,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1525775328}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.82, y: 0, z: 2.04}
+  m_LocalPosition: {x: 0.07, y: 0, z: 7.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

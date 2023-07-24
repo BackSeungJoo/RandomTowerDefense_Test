@@ -8,6 +8,7 @@ public class Tower : MonoBehaviour
     public float Range;         // 공격 범위
     public GameObject target;   // 몬스터
     public Animator animator;
+    public GameObject Splash;
 
     private void Start()
     {
@@ -56,10 +57,16 @@ public class Tower : MonoBehaviour
     public void ATTACK()
     {
         animator.SetBool("isShoot", true);
+
     }
 
     public void IDLE()
     {
         animator.SetBool("isShoot", false);
+    }
+
+    public void SplashDamage()
+    {
+        Instantiate(Splash,transform.position, Quaternion.identity);
     }
 }
