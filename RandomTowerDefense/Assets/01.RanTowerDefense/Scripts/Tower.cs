@@ -12,46 +12,53 @@ public class Tower : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+        InvokeRepeating("UpdateTarget", 0f, 0.2f);      // 초당 5번 대기시간 없이 UpdateTarget 메서드를 실행시킴
+    }
+
+    private void OnDrawGizmosSelected()                 // 공격 범위를 표시해준다.
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(gameObject.transform.position, Range);
     }
 
     private void UpdateTarget() // 타겟 업데이트
     {
         if(target == null)
         {
-            GameObject[] Monsters = GameObject.FindGameObjectsWithTag("Monster");
-            float shortestDistance = Mathf.Infinity;    // 가장 짧은 거리
-            GameObject nearestMonster = null;           // 가장 가까운 몬스터
-            foreach(GameObject Monster in Monsters)
+            GameObject[] Monsters = GameObject.FindGameObjectsWithTag("Monster");   // 하이어라키 창에 있는 tag가 Monster인 게임오브젝트를 모두 배열에 넣음
+            float shortestDistance = Mathf.Infinity;                                // 가장 짧은 거리
+            GameObject nearestMonster = null;                                       // 가장 가까운 몬스터
+            foreach(GameObject Monster in Monsters)                                 // 임의의 게임오브젝트 안에 배열을 하나씩 넣고 아래의 내용을 실행함
             {
-                float DistanceToMonsters = Vector3.Distance(transform.position, Monster.transform.position);
+                float DistanceToMonsters = Vector3.Distance(transform.position, Monster.transform.position);        // 타워와 몬스터의 거리 구하기
 
-                if(DistanceToMonsters < shortestDistance)
+                if(DistanceToMonsters < shortestDistance)       // 가장 짧은 거리 보다 현재 몬스터의 거리가 짧다면
                 {
-                    shortestDistance = DistanceToMonsters;
-                    nearestMonster = Monster;
+                    shortestDistance = DistanceToMonsters;      // 가장 짧은 거리는 몬스터의 해당 몬스터와의 거리가 되고
+                    nearestMonster = Monster;                   // 가장 가까운 몬스터는 해당 몬스터가 된다.
                 }
             }
 
-            if (nearestMonster != null && shortestDistance <= Range)
+            if (nearestMonster != null && shortestDistance <= Range)        // 가장 가까운 몬스터가 존재하고, 공격 범위보다 안쪽에 있다면
             {
-                target = nearestMonster;
-                ATTACK();
+                target = nearestMonster;    // 타겟은 가장 가까운 몬스터가 되고
+                ATTACK();                   // 공격한다.
             }
             else
             {
-                IDLE();
                 target = null;
+                IDLE();
             }
         }
         
     }
 
-    private void ATTACK()
+    public void ATTACK()
     {
         animator.SetBool("isShoot", true);
     }
 
-    private void IDLE()
+    public void IDLE()
     {
         animator.SetBool("isShoot", false);
     }

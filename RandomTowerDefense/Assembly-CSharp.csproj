@@ -56,7 +56,7 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BuildManager.cs" />
+    <Compile Include="Assets\01.RanTowerDefense\Scripts\BuildManager.cs" />
     <Compile Include="Assets\01.RanTowerDefense\Scripts\Node.cs" />
     <Compile Include="Assets\01.RanTowerDefense\Scripts\Tower.cs" />
     <Compile Include="Assets\01.RanTowerDefense\Scripts\Animaiton_Test.cs" />
