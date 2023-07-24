@@ -18,6 +18,7 @@ public class Node : MonoBehaviour
     private void OnMouseDown()
     {
        // rend.material.color = SelectColor;
+
     }
 
     private void OnMouseUp()
