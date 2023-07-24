@@ -24,5 +24,6 @@ public class Node : MonoBehaviour
     private void OnMouseUp()
     {
         rend.material.color = SelectColor;
+        BuildManager.instance.SelectNode = this.gameObject;
     }
 }
