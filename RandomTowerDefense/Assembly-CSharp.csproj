@@ -60,6 +60,7 @@
     <Compile Include="Assets\01.RanTowerDefense\Scripts\Node.cs" />
     <Compile Include="Assets\01.RanTowerDefense\Scripts\Tower.cs" />
     <Compile Include="Assets\01.RanTowerDefense\Scripts\Animaiton_Test.cs" />
+    <Compile Include="Assets\01.RanTowerDefense\Scripts\Monster.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
